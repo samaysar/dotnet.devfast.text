@@ -207,9 +207,9 @@ namespace DevFast.Net.Text.Json.Utf8
                 JsonConst.Number7Byte => SkipNumber(token),
                 JsonConst.Number8Byte => SkipNumber(token),
                 JsonConst.Number9Byte => SkipNumber(token),
-                JsonConst.FirstOfTrueByte => SkipRueOfTrue(token),
-                JsonConst.FirstOfFalseByte => SkipAlseOfFalse(token),
-                JsonConst.FirstOfNullByte => SkipUllOfNull(token),
+                JsonConst.LowerCaseTCharacterByte => SkipRueOfTrue(token),
+                JsonConst.LowerCaseFCharacterByte => SkipAlseOfFalse(token),
+                JsonConst.LowerCaseNCharacterByte => SkipUllOfNull(token),
                 _ => throw new JsonException("Invalid byte value for start of JSON element. " +
                                                              $"Found = {(char)Current!}, " +
                                                              $"0-Based Position = {Position}.")
@@ -283,13 +283,13 @@ namespace DevFast.Net.Text.Json.Utf8
                                 case JsonConst.ReverseSlashByte:
                                 case JsonConst.ForwardSlashByte:
                                 case JsonConst.StringQuoteByte:
-                                case JsonConst.LastOfBackspaceInStringByte:
-                                case JsonConst.FirstOfFalseByte:
-                                case JsonConst.FirstOfNullByte:
-                                case JsonConst.FirstOfTrueByte:
-                                case JsonConst.LastOfCarriageReturnInStringByte:
+                                case JsonConst.LowerCaseBCharacterByte:
+                                case JsonConst.LowerCaseFCharacterByte:
+                                case JsonConst.LowerCaseNCharacterByte:
+                                case JsonConst.LowerCaseTCharacterByte:
+                                case JsonConst.LowerCaseRCharacterByte:
                                     continue;
-                                case JsonConst.SecondOfHexDigitInStringByte:
+                                case JsonConst.LowerCaseUCharacterByte:
                                     //JsonSerializer must handle validation!
                                     //we skip 4 bytes
                                     if (NextWithEnsureCapacity(token, 4))
@@ -303,12 +303,12 @@ namespace DevFast.Net.Text.Json.Utf8
                                         $"Expected = \\{(char)JsonConst.ReverseSlashByte} or " +
                                         $"\\{(char)JsonConst.ForwardSlashByte} or " +
                                         $"\\{(char)JsonConst.StringQuoteByte} or " +
-                                        $"\\{(char)JsonConst.LastOfBackspaceInStringByte} or " +
-                                        $"\\{(char)JsonConst.FirstOfFalseByte} or " +
-                                        $"\\{(char)JsonConst.FirstOfNullByte} or " +
-                                        $"\\{(char)JsonConst.FirstOfTrueByte} or " +
-                                        $"\\{(char)JsonConst.LastOfCarriageReturnInStringByte} or " +
-                                        $"\\{(char)JsonConst.SecondOfHexDigitInStringByte}XXXX, " +
+                                        $"\\{(char)JsonConst.LowerCaseBCharacterByte} or " +
+                                        $"\\{(char)JsonConst.LowerCaseFCharacterByte} or " +
+                                        $"\\{(char)JsonConst.LowerCaseNCharacterByte} or " +
+                                        $"\\{(char)JsonConst.LowerCaseTCharacterByte} or " +
+                                        $"\\{(char)JsonConst.LowerCaseRCharacterByte} or " +
+                                        $"\\{(char)JsonConst.LowerCaseUCharacterByte}XXXX, " +
                                         $"Found = \\{(char)Current!}, " +
                                         $"0-Based Position = {Position}.");
                             }

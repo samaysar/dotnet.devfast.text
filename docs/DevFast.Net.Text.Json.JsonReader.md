@@ -50,7 +50,7 @@ Cancellation token to observe.
 `size` [System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')
 
 Initial size of underlying byte buffer. Any value less than
-            [RawUtf8JsonPartReaderMinBuffer](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.RawUtf8JsonPartReaderMinBuffer 'DevFast.Net.Text.Json.JsonConst.RawUtf8JsonPartReaderMinBuffer') will be ignored.
+            [JsonReaderMinBuffer](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.JsonReaderMinBuffer 'DevFast.Net.Text.Json.JsonConst.JsonReaderMinBuffer') will be ignored.
 
 <a name='DevFast.Net.Text.Json.JsonReader.CreateUtf8ArrayReaderAsync(System.IO.Stream,System.Threading.CancellationToken,int,bool).disposeStream'></a>
 

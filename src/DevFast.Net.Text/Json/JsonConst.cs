@@ -34,7 +34,7 @@ namespace DevFast.Net.Text.Json
         /// <summary>
         /// Minimum buffer size of <see cref="JsonArrayReader"/>.
         /// </summary>
-        public const int RawUtf8JsonPartReaderMinBuffer = 512;
+        public const int JsonReaderMinBuffer = 512;
 
         /// <summary>
         /// JSON Begin-Array ('[') character value as <see cref="byte"/> (based on https://datatracker.ietf.org/doc/html/rfc7159).
@@ -74,32 +74,32 @@ namespace DevFast.Net.Text.Json
         /// <summary>
         /// JSON 't' character (can be used to identify beginning of 'true' literal or horizontal tab '\t' in JSON string along with <see cref="ReverseSlashByte"/>), as <see cref="byte"/> (based on https://datatracker.ietf.org/doc/html/rfc7159).
         /// </summary>
-        public const byte FirstOfTrueByte = (byte)'t';
+        public const byte LowerCaseTCharacterByte = (byte)'t';
 
         /// <summary>
         /// JSON 'f' character (can be used to identify beginning of 'false' literal or form-feed '\f' in JSON string along with <see cref="ReverseSlashByte"/>), as <see cref="byte"/> (based on https://datatracker.ietf.org/doc/html/rfc7159).
         /// </summary>
-        public const byte FirstOfFalseByte = (byte)'f';
+        public const byte LowerCaseFCharacterByte = (byte)'f';
 
         /// <summary>
         /// JSON 'n' character (can be used to identify beginning of 'null' literal or line-feed '\n' in JSON string along with <see cref="ReverseSlashByte"/>), as <see cref="byte"/> (based on https://datatracker.ietf.org/doc/html/rfc7159).
         /// </summary>
-        public const byte FirstOfNullByte = (byte)'n';
+        public const byte LowerCaseNCharacterByte = (byte)'n';
 
         /// <summary>
         /// JSON 'b' character (to identify backspace '\b' in JSON string along with <see cref="ReverseSlashByte"/>), as <see cref="byte"/> (based on https://datatracker.ietf.org/doc/html/rfc7159).
         /// </summary>
-        public const byte LastOfBackspaceInStringByte = (byte)'b';
+        public const byte LowerCaseBCharacterByte = (byte)'b';
 
         /// <summary>
         /// JSON 'r' character (can be used to identify 'r' in 'true' literal or identify backspace '\r' in JSON string along with <see cref="ReverseSlashByte"/>), as <see cref="byte"/> (based on https://datatracker.ietf.org/doc/html/rfc7159).
         /// </summary>
-        public const byte LastOfCarriageReturnInStringByte = (byte)'r';
+        public const byte LowerCaseRCharacterByte = (byte)'r';
 
         /// <summary>
         /// JSON 'u' character (can be used to identify 'u' in 'true' literal, 'u' in 'null' literal or to identify Hex-Digits '\uXXXX' in JSON string along with <see cref="ReverseSlashByte"/>), as <see cref="byte"/> (based on https://datatracker.ietf.org/doc/html/rfc7159).
         /// </summary>
-        public const byte SecondOfHexDigitInStringByte = (byte)'u';
+        public const byte LowerCaseUCharacterByte = (byte)'u';
 
         /// <summary>
         /// JSON Minus Sign ('-') character, as in numeric values, as <see cref="byte"/> (based on https://datatracker.ietf.org/doc/html/rfc7159).
