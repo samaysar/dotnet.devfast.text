@@ -1,5 +1,5 @@
 ﻿using System.Dynamic;
-using Dot.Net.DevFast.Extensions;
+using DevFast.Net.Extensions.SystemTypes;
 
 namespace DevFast.Net.Text.Tests.Json.Utf8
 {
@@ -481,7 +481,7 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
                 FileOptions.SequentialScan | FileOptions.Asynchronous | FileOptions.DeleteOnClose);
             await using StreamWriter w = new(f, new UTF8Encoding(false), 4096, true);
             w.Write("[");
-            Enumerable.Range(0, 1000).ForEach(_ =>
+            Enumerable.Range(0, 1000).ForEach((_, __) =>
             {
                 w.Write(TestHelper.ComplexJson);
                 w.Write(",");
