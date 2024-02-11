@@ -1,0 +1,19 @@
+{
+  "Sections": [
+    "Header",
+    "Default"
+  ],
+  "Markdown.IgnoreLineBreak": true,
+  "Markdown.TableOfContentsModes": "IncludeSummaryWithNewLine",
+  "ClassDocItem": {
+    "Markdown.TableOfContentsModes": "Grouped",
+    "Sections": [
+      "Header",
+      "Title",
+      "summary",
+      "Definition",
+      "TableOfContents",
+      "Default"
+    ]
+  }
+}

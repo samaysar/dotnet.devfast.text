@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <NoWarn />
+    <NoWarn>CA1062;CA1068</NoWarn>
+    <Deterministic>true</Deterministic>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>DevFast.Net.Text.xml</DocumentationFile>
+    <DefaultDocumentationFolder>../../docs</DefaultDocumentationFolder>
+    <DefaultDocumentationGeneratedPages>Namespaces,Types</DefaultDocumentationGeneratedPages>
+    <DefaultDocumentationConfigurationFile>../../DocConfig.json</DefaultDocumentationConfigurationFile>
+    <DefaultDocumentationLinksBaseUrl>https://github.com/samaysar/dotnet.devfast.text/tree/master/docs</DefaultDocumentationLinksBaseUrl>
+    <Title>DevFast.Net.Text</Title>
+    <Company>samaysar</Company>
+    <Version Condition="'$(vNugetPack)'==''">1.0.0</Version>
+	  <Version Condition="'$(vNugetPack)'!=''">$(vNugetPack)</Version>
+	  <PackageVersion Condition="'$(vNugetPack)'==''">1.0.0-alpha</PackageVersion>
+	  <PackageVersion Condition="'$(vNugetPack)'!=''">$(vNugetPack)</PackageVersion>
+	  <FileVersion Condition="'$(vNugetPack)'==''">1.0.0</FileVersion>
+	  <FileVersion Condition="'$(vNugetPack)'!=''">$(vNugetPack)</FileVersion>
+	  <AssemblyVersion Condition="'$(vNugetPack)'==''">1.0.0</AssemblyVersion>
+	  <AssemblyVersion Condition="'$(vNugetPack)'!=''">$(vNugetPack)</AssemblyVersion>
+	  <InformationalVersion Condition="'$(vNugetPack)'==''">1.0.0-alpha.0</InformationalVersion>
+	  <InformationalVersion Condition="'$(vNugetPack)'!=''">$(vNugetPack).0</InformationalVersion>
+    <AssemblyTitle>DevFast.Net.Text (TargetFramework: $(TargetFramework))</AssemblyTitle>
+    <Authors>Divya Sarthi MAHESHWARI</Authors>
+    <Description>Package containing well-tested, self-explained &amp; easy to use artifact necessary for text processing.</Description>
+    <Copyright>Copyright © Divya Sarthi MAHESHWARI 2024</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/samaysar/dotnet.devfast</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/samaysar/dotnet.devfast.text</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>devfast;fastdev;dotnet;stream;json;text;largejsonarray</PackageTags>
+    <PackageReleaseNotes>https://raw.githubusercontent.com/samaysar/dotnet.devfast.text/master/ReleaseNotes.txt</PackageReleaseNotes>
+    <NeutralLanguage />
+	  <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <LangVersion>latest</LangVersion>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AnalysisLevel>6.0-all</AnalysisLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<None Include="..\..\icon.png" Pack="true" PackagePath="" />
+    <None Include="..\..\LICENSE" Pack="true" Visible="false" PackagePath="" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="" />
+    <Content Include="DevFast.Net.Text.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <BuildAction>None</BuildAction>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DefaultDocumentation" Version="0.8.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="DevFast.Net.Extensions" Version="0.1.1" />
+  </ItemGroup>
+
+</Project>

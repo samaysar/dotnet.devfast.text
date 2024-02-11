@@ -1,0 +1,29 @@
+name: .NET 
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+jobs:
+  buildAndTestFull:
+    strategy:
+      matrix:
+        dotnet-version: ['6.x.x','7.x.x','8.x.x']
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Install .NET ${{ matrix.dotnet-version }}
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
+    - name: Display dotnet version
+      run: dotnet --version
+    - name: Execute unit tests
+      run: dotnet test . --collect:"XPlat Code Coverage;Format=json,cobertura,lcov,teamcity,opencover"
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
