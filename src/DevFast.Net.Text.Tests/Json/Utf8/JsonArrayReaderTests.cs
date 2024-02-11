@@ -45,7 +45,7 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
             await using Stream m = TestHelper.GetReadableStreamWith("[]", withPreamble);
             using (IJsonArrayReader r = await JsonReader.CreateUtf8ArrayReaderAsync(m, CancellationToken.None, disposeStream: disposeInner))
             {
-                That(r.Capacity, Is.EqualTo(JsonConst.RawUtf8JsonPartReaderMinBuffer));
+                That(r.Capacity, Is.EqualTo(JsonConst.JsonReaderMinBuffer));
                 That(r.ReadIsBeginArray(), Is.True);
                 That(r.ReadIsBeginArray(), Is.False);
                 RawJson current = r.ReadRaw(default);

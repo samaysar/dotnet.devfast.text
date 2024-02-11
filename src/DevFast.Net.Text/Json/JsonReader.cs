@@ -14,13 +14,13 @@ namespace DevFast.Net.Text.Json
         /// <param name="stream">A readable stream containing JSON array data.</param>
         /// <param name="token">Cancellation token to observe.</param>
         /// <param name="size">Initial size of underlying byte buffer. Any value less than
-        /// <see cref="JsonConst.RawUtf8JsonPartReaderMinBuffer"/> will be ignored.</param>
+        /// <see cref="JsonConst.JsonReaderMinBuffer"/> will be ignored.</param>
         /// <param name="disposeStream"><see langword="true"/> to dispose <paramref name="stream"/> when either
         /// current instance of <see cref="IJsonArrayReader"/> itself disposing or
         /// when <paramref name="stream"/> is completely read; <see langword="false"/> otherwise.</param>
         public static async ValueTask<IJsonArrayReader> CreateUtf8ArrayReaderAsync(Stream stream,
             CancellationToken token = default,
-            int size = JsonConst.RawUtf8JsonPartReaderMinBuffer,
+            int size = JsonConst.JsonReaderMinBuffer,
             bool disposeStream = false)
         {
             if (!stream.CanRead)
@@ -44,7 +44,7 @@ namespace DevFast.Net.Text.Json
             }
             else
             {
-                byte[] buffer = new byte[Math.Max(JsonConst.RawUtf8JsonPartReaderMinBuffer, size)];
+                byte[] buffer = new byte[Math.Max(JsonConst.JsonReaderMinBuffer, size)];
 #if NET7_0_OR_GREATER
                 int end = await stream.ReadAtLeastAsync(buffer,
                     buffer.Length / 2,

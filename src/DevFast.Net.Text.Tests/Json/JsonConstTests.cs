@@ -22,7 +22,7 @@ namespace DevFast.Net.Text.Tests.Json
         {
             Multiple(() =>
             {
-                That(JsonConst.RawUtf8JsonPartReaderMinBuffer, Is.EqualTo(512));
+                That(JsonConst.JsonReaderMinBuffer, Is.EqualTo(512));
                 That(JsonConst.ArrayBeginByte, Is.EqualTo(0x5B));
                 That(JsonConst.ArrayEndByte, Is.EqualTo(0x5D));
                 That(JsonConst.ObjectBeginByte, Is.EqualTo(0x7B));
@@ -30,12 +30,12 @@ namespace DevFast.Net.Text.Tests.Json
                 That(JsonConst.StringQuoteByte, Is.EqualTo(0x22));
                 That(JsonConst.ValueSeparatorByte, Is.EqualTo(0x2C));
                 That(JsonConst.NameSeparatorByte, Is.EqualTo(0x3A));
-                That(JsonConst.FirstOfTrueByte, Is.EqualTo(0x74));
-                That(JsonConst.FirstOfFalseByte, Is.EqualTo(0x66));
-                That(JsonConst.FirstOfNullByte, Is.EqualTo(0x6E));
-                That(JsonConst.LastOfBackspaceInStringByte, Is.EqualTo(0x62));
-                That(JsonConst.LastOfCarriageReturnInStringByte, Is.EqualTo(0x72));
-                That(JsonConst.SecondOfHexDigitInStringByte, Is.EqualTo(0x75));
+                That(JsonConst.LowerCaseTCharacterByte, Is.EqualTo(0x74));
+                That(JsonConst.LowerCaseFCharacterByte, Is.EqualTo(0x66));
+                That(JsonConst.LowerCaseNCharacterByte, Is.EqualTo(0x6E));
+                That(JsonConst.LowerCaseBCharacterByte, Is.EqualTo(0x62));
+                That(JsonConst.LowerCaseRCharacterByte, Is.EqualTo(0x72));
+                That(JsonConst.LowerCaseUCharacterByte, Is.EqualTo(0x75));
                 That(JsonConst.MinusSignByte, Is.EqualTo(0x2D));
                 That(JsonConst.PlusSignByte, Is.EqualTo(0x2B));
                 That(JsonConst.ExponentUpperByte, Is.EqualTo(0x45));

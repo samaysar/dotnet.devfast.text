@@ -1,3 +1,24 @@
 DevFast.Net.Text 0.1.0
 
- 1. 
+ 1. New feature - namespace DevFast.Net.Text added, containing
+	A. Static Class TextConst with
+			- static readonly variable Utf8NoBom defined as UTF8Encoding(false)
+
+ 2. New feature - namespace DevFast.Net.Text.Json added, containing
+	A. enum JsonType
+	B. readonly struct RawJson(JsonType type, byte[] value)
+	C. class JsonConst containing
+			- various const byte values necessary to parse json
+			- static readonly instances of various JsonNamingPolicy
+			- const minimum buffer size for JsonReader
+			- interface IJsonArrayReader for json parsing
+			- static class JsonReader to create byte-stream based IJsonArrayReader instance
+
+ 3. New feature - namespace DevFast.Net.Text.Json.Utf8 added, containing
+	A. class JsonArrayReader that implements IJsonArrayReader, reads json array element 1 by 1 from stream other than MemoryStream
+	B. class MemJsonArrayReader that implements IJsonArrayReader, reads json array element 1 by 1 from MemoryStream
+
+ 4. New feature - namespace DevFast.Net.Text.Json.NamingPolicy added, containing
+	A. class JsonIdemCaseNamingPolicy that implements JsonNamingPolicy, to keep field names unchanged
+	B. class JsonLongSnakeCaseNamingPolicy that implements JsonNamingPolicy, to change field names to long snake case (i.e. WriteIO to write_i_o)
+	C. class JsonSnakeCaseNamingPolicy that implements JsonNamingPolicy, to change field names to simple snake case (i.e. WriteIO to write_io)

@@ -189,7 +189,7 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
             MemoryStream m = new();
             UTF8Encoding e = new(true);
             await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[] { JsonConst.SecondOfHexDigitInStringByte });
+            await m.WriteAsync(new[] { JsonConst.LowerCaseUCharacterByte });
             _ = m.Seek(0, SeekOrigin.Begin);
             using IJsonArrayReader r = await JsonReader.CreateUtf8ArrayReaderAsync(m, CancellationToken.None, disposeStream: true);
             JsonException err = Throws<JsonException>(() => r.ReadRaw(false))!;
@@ -252,17 +252,17 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
                 JsonConst.ReverseSlashByte,
                 JsonConst.StringQuoteByte,
                 JsonConst.ReverseSlashByte,
-                JsonConst.LastOfBackspaceInStringByte,
+                JsonConst.LowerCaseBCharacterByte,
                 JsonConst.ReverseSlashByte,
-                JsonConst.FirstOfFalseByte,
+                JsonConst.LowerCaseFCharacterByte,
                 JsonConst.ReverseSlashByte,
-                JsonConst.FirstOfNullByte,
+                JsonConst.LowerCaseNCharacterByte,
                 JsonConst.ReverseSlashByte,
-                JsonConst.FirstOfTrueByte,
+                JsonConst.LowerCaseTCharacterByte,
                 JsonConst.ReverseSlashByte,
-                JsonConst.LastOfCarriageReturnInStringByte,
+                JsonConst.LowerCaseRCharacterByte,
                 JsonConst.ReverseSlashByte,
-                JsonConst.SecondOfHexDigitInStringByte,
+                JsonConst.LowerCaseUCharacterByte,
                 JsonConst.Number0Byte,
                 JsonConst.Number0Byte,
                 JsonConst.Number0Byte,
@@ -328,7 +328,7 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
             {
                 JsonConst.StringQuoteByte,
                 JsonConst.ReverseSlashByte,
-                JsonConst.SecondOfHexDigitInStringByte,
+                JsonConst.LowerCaseUCharacterByte,
                 JsonConst.Number0Byte,
                 JsonConst.StringQuoteByte
             });

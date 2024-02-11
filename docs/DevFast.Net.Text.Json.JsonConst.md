@@ -17,15 +17,17 @@ public static class JsonConst
   - **[DecimalPointByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.DecimalPointByte 'DevFast.Net.Text.Json.JsonConst.DecimalPointByte')**
   - **[ExponentLowerByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ExponentLowerByte 'DevFast.Net.Text.Json.JsonConst.ExponentLowerByte')**
   - **[ExponentUpperByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ExponentUpperByte 'DevFast.Net.Text.Json.JsonConst.ExponentUpperByte')**
-  - **[FirstOfFalseByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.FirstOfFalseByte 'DevFast.Net.Text.Json.JsonConst.FirstOfFalseByte')**
-  - **[FirstOfNullByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.FirstOfNullByte 'DevFast.Net.Text.Json.JsonConst.FirstOfNullByte')**
-  - **[FirstOfTrueByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.FirstOfTrueByte 'DevFast.Net.Text.Json.JsonConst.FirstOfTrueByte')**
   - **[ForwardSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ForwardSlashByte 'DevFast.Net.Text.Json.JsonConst.ForwardSlashByte')**
   - **[HorizontalTabByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.HorizontalTabByte 'DevFast.Net.Text.Json.JsonConst.HorizontalTabByte')**
   - **[IdemCase](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.IdemCase 'DevFast.Net.Text.Json.JsonConst.IdemCase')**
-  - **[LastOfBackspaceInStringByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.LastOfBackspaceInStringByte 'DevFast.Net.Text.Json.JsonConst.LastOfBackspaceInStringByte')**
-  - **[LastOfCarriageReturnInStringByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.LastOfCarriageReturnInStringByte 'DevFast.Net.Text.Json.JsonConst.LastOfCarriageReturnInStringByte')**
+  - **[JsonReaderMinBuffer](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.JsonReaderMinBuffer 'DevFast.Net.Text.Json.JsonConst.JsonReaderMinBuffer')**
   - **[LongSnakeCase](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.LongSnakeCase 'DevFast.Net.Text.Json.JsonConst.LongSnakeCase')**
+  - **[LowerCaseBCharacterByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.LowerCaseBCharacterByte 'DevFast.Net.Text.Json.JsonConst.LowerCaseBCharacterByte')**
+  - **[LowerCaseFCharacterByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.LowerCaseFCharacterByte 'DevFast.Net.Text.Json.JsonConst.LowerCaseFCharacterByte')**
+  - **[LowerCaseNCharacterByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.LowerCaseNCharacterByte 'DevFast.Net.Text.Json.JsonConst.LowerCaseNCharacterByte')**
+  - **[LowerCaseRCharacterByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.LowerCaseRCharacterByte 'DevFast.Net.Text.Json.JsonConst.LowerCaseRCharacterByte')**
+  - **[LowerCaseTCharacterByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.LowerCaseTCharacterByte 'DevFast.Net.Text.Json.JsonConst.LowerCaseTCharacterByte')**
+  - **[LowerCaseUCharacterByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.LowerCaseUCharacterByte 'DevFast.Net.Text.Json.JsonConst.LowerCaseUCharacterByte')**
   - **[MinusSignByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.MinusSignByte 'DevFast.Net.Text.Json.JsonConst.MinusSignByte')**
   - **[NameSeparatorByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.NameSeparatorByte 'DevFast.Net.Text.Json.JsonConst.NameSeparatorByte')**
   - **[NewLineByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.NewLineByte 'DevFast.Net.Text.Json.JsonConst.NewLineByte')**
@@ -42,9 +44,7 @@ public static class JsonConst
   - **[ObjectBeginByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ObjectBeginByte 'DevFast.Net.Text.Json.JsonConst.ObjectBeginByte')**
   - **[ObjectEndByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ObjectEndByte 'DevFast.Net.Text.Json.JsonConst.ObjectEndByte')**
   - **[PlusSignByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.PlusSignByte 'DevFast.Net.Text.Json.JsonConst.PlusSignByte')**
-  - **[RawUtf8JsonPartReaderMinBuffer](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.RawUtf8JsonPartReaderMinBuffer 'DevFast.Net.Text.Json.JsonConst.RawUtf8JsonPartReaderMinBuffer')**
   - **[ReverseSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ReverseSlashByte 'DevFast.Net.Text.Json.JsonConst.ReverseSlashByte')**
-  - **[SecondOfHexDigitInStringByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.SecondOfHexDigitInStringByte 'DevFast.Net.Text.Json.JsonConst.SecondOfHexDigitInStringByte')**
   - **[SnakeCase](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.SnakeCase 'DevFast.Net.Text.Json.JsonConst.SnakeCase')**
   - **[SpaceByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.SpaceByte 'DevFast.Net.Text.Json.JsonConst.SpaceByte')**
   - **[StringQuoteByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.StringQuoteByte 'DevFast.Net.Text.Json.JsonConst.StringQuoteByte')**
@@ -165,45 +165,6 @@ public const byte ExponentUpperByte = 69;
 #### Field Value
 [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
 
-<a name='DevFast.Net.Text.Json.JsonConst.FirstOfFalseByte'></a>
-
-## JsonConst.FirstOfFalseByte Field
-
-JSON 'f' character (can be used to identify beginning of 'false' literal or form-feed '\f' in JSON string along with [ReverseSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ReverseSlashByte 'DevFast.Net.Text.Json.JsonConst.ReverseSlashByte')), as [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') (based on https://datatracker.ietf.org/doc/html/rfc7159).
-
-```csharp
-public const byte FirstOfFalseByte = 102;
-```
-
-#### Field Value
-[System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
-
-<a name='DevFast.Net.Text.Json.JsonConst.FirstOfNullByte'></a>
-
-## JsonConst.FirstOfNullByte Field
-
-JSON 'n' character (can be used to identify beginning of 'null' literal or line-feed '\n' in JSON string along with [ReverseSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ReverseSlashByte 'DevFast.Net.Text.Json.JsonConst.ReverseSlashByte')), as [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') (based on https://datatracker.ietf.org/doc/html/rfc7159).
-
-```csharp
-public const byte FirstOfNullByte = 110;
-```
-
-#### Field Value
-[System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
-
-<a name='DevFast.Net.Text.Json.JsonConst.FirstOfTrueByte'></a>
-
-## JsonConst.FirstOfTrueByte Field
-
-JSON 't' character (can be used to identify beginning of 'true' literal or horizontal tab '\t' in JSON string along with [ReverseSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ReverseSlashByte 'DevFast.Net.Text.Json.JsonConst.ReverseSlashByte')), as [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') (based on https://datatracker.ietf.org/doc/html/rfc7159).
-
-```csharp
-public const byte FirstOfTrueByte = 116;
-```
-
-#### Field Value
-[System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
-
 <a name='DevFast.Net.Text.Json.JsonConst.ForwardSlashByte'></a>
 
 ## JsonConst.ForwardSlashByte Field
@@ -243,31 +204,18 @@ public static readonly JsonNamingPolicy IdemCase;
 #### Field Value
 [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/en-us/dotnet/api/System.Text.Json.JsonNamingPolicy 'System.Text.Json.JsonNamingPolicy')
 
-<a name='DevFast.Net.Text.Json.JsonConst.LastOfBackspaceInStringByte'></a>
+<a name='DevFast.Net.Text.Json.JsonConst.JsonReaderMinBuffer'></a>
 
-## JsonConst.LastOfBackspaceInStringByte Field
+## JsonConst.JsonReaderMinBuffer Field
 
-JSON 'b' character (to identify backspace '\b' in JSON string along with [ReverseSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ReverseSlashByte 'DevFast.Net.Text.Json.JsonConst.ReverseSlashByte')), as [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') (based on https://datatracker.ietf.org/doc/html/rfc7159).
+Minimum buffer size of [JsonArrayReader](DevFast.Net.Text.Json.Utf8.JsonArrayReader.md 'DevFast.Net.Text.Json.Utf8.JsonArrayReader').
 
 ```csharp
-public const byte LastOfBackspaceInStringByte = 98;
+public const int JsonReaderMinBuffer = 512;
 ```
 
 #### Field Value
-[System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
-
-<a name='DevFast.Net.Text.Json.JsonConst.LastOfCarriageReturnInStringByte'></a>
-
-## JsonConst.LastOfCarriageReturnInStringByte Field
-
-JSON 'r' character (can be used to identify 'r' in 'true' literal or identify backspace '\r' in JSON string along with [ReverseSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ReverseSlashByte 'DevFast.Net.Text.Json.JsonConst.ReverseSlashByte')), as [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') (based on https://datatracker.ietf.org/doc/html/rfc7159).
-
-```csharp
-public const byte LastOfCarriageReturnInStringByte = 114;
-```
-
-#### Field Value
-[System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
+[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')
 
 <a name='DevFast.Net.Text.Json.JsonConst.LongSnakeCase'></a>
 
@@ -282,6 +230,84 @@ public static readonly JsonNamingPolicy LongSnakeCase;
 
 #### Field Value
 [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/en-us/dotnet/api/System.Text.Json.JsonNamingPolicy 'System.Text.Json.JsonNamingPolicy')
+
+<a name='DevFast.Net.Text.Json.JsonConst.LowerCaseBCharacterByte'></a>
+
+## JsonConst.LowerCaseBCharacterByte Field
+
+JSON 'b' character (to identify backspace '\b' in JSON string along with [ReverseSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ReverseSlashByte 'DevFast.Net.Text.Json.JsonConst.ReverseSlashByte')), as [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') (based on https://datatracker.ietf.org/doc/html/rfc7159).
+
+```csharp
+public const byte LowerCaseBCharacterByte = 98;
+```
+
+#### Field Value
+[System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
+
+<a name='DevFast.Net.Text.Json.JsonConst.LowerCaseFCharacterByte'></a>
+
+## JsonConst.LowerCaseFCharacterByte Field
+
+JSON 'f' character (can be used to identify beginning of 'false' literal or form-feed '\f' in JSON string along with [ReverseSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ReverseSlashByte 'DevFast.Net.Text.Json.JsonConst.ReverseSlashByte')), as [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') (based on https://datatracker.ietf.org/doc/html/rfc7159).
+
+```csharp
+public const byte LowerCaseFCharacterByte = 102;
+```
+
+#### Field Value
+[System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
+
+<a name='DevFast.Net.Text.Json.JsonConst.LowerCaseNCharacterByte'></a>
+
+## JsonConst.LowerCaseNCharacterByte Field
+
+JSON 'n' character (can be used to identify beginning of 'null' literal or line-feed '\n' in JSON string along with [ReverseSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ReverseSlashByte 'DevFast.Net.Text.Json.JsonConst.ReverseSlashByte')), as [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') (based on https://datatracker.ietf.org/doc/html/rfc7159).
+
+```csharp
+public const byte LowerCaseNCharacterByte = 110;
+```
+
+#### Field Value
+[System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
+
+<a name='DevFast.Net.Text.Json.JsonConst.LowerCaseRCharacterByte'></a>
+
+## JsonConst.LowerCaseRCharacterByte Field
+
+JSON 'r' character (can be used to identify 'r' in 'true' literal or identify backspace '\r' in JSON string along with [ReverseSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ReverseSlashByte 'DevFast.Net.Text.Json.JsonConst.ReverseSlashByte')), as [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') (based on https://datatracker.ietf.org/doc/html/rfc7159).
+
+```csharp
+public const byte LowerCaseRCharacterByte = 114;
+```
+
+#### Field Value
+[System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
+
+<a name='DevFast.Net.Text.Json.JsonConst.LowerCaseTCharacterByte'></a>
+
+## JsonConst.LowerCaseTCharacterByte Field
+
+JSON 't' character (can be used to identify beginning of 'true' literal or horizontal tab '\t' in JSON string along with [ReverseSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ReverseSlashByte 'DevFast.Net.Text.Json.JsonConst.ReverseSlashByte')), as [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') (based on https://datatracker.ietf.org/doc/html/rfc7159).
+
+```csharp
+public const byte LowerCaseTCharacterByte = 116;
+```
+
+#### Field Value
+[System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
+
+<a name='DevFast.Net.Text.Json.JsonConst.LowerCaseUCharacterByte'></a>
+
+## JsonConst.LowerCaseUCharacterByte Field
+
+JSON 'u' character (can be used to identify 'u' in 'true' literal, 'u' in 'null' literal or to identify Hex-Digits '\uXXXX' in JSON string along with [ReverseSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ReverseSlashByte 'DevFast.Net.Text.Json.JsonConst.ReverseSlashByte')), as [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') (based on https://datatracker.ietf.org/doc/html/rfc7159).
+
+```csharp
+public const byte LowerCaseUCharacterByte = 117;
+```
+
+#### Field Value
+[System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
 
 <a name='DevFast.Net.Text.Json.JsonConst.MinusSignByte'></a>
 
@@ -491,19 +517,6 @@ public const byte PlusSignByte = 43;
 #### Field Value
 [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
 
-<a name='DevFast.Net.Text.Json.JsonConst.RawUtf8JsonPartReaderMinBuffer'></a>
-
-## JsonConst.RawUtf8JsonPartReaderMinBuffer Field
-
-Minimum buffer size of [JsonArrayReader](DevFast.Net.Text.Json.Utf8.JsonArrayReader.md 'DevFast.Net.Text.Json.Utf8.JsonArrayReader').
-
-```csharp
-public const int RawUtf8JsonPartReaderMinBuffer = 512;
-```
-
-#### Field Value
-[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')
-
 <a name='DevFast.Net.Text.Json.JsonConst.ReverseSlashByte'></a>
 
 ## JsonConst.ReverseSlashByte Field
@@ -512,19 +525,6 @@ JSON escape ('\', a.k.a. Reverse Solidus) character value as [System.Byte](https
 
 ```csharp
 public const byte ReverseSlashByte = 92;
-```
-
-#### Field Value
-[System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')
-
-<a name='DevFast.Net.Text.Json.JsonConst.SecondOfHexDigitInStringByte'></a>
-
-## JsonConst.SecondOfHexDigitInStringByte Field
-
-JSON 'u' character (can be used to identify 'u' in 'true' literal, 'u' in 'null' literal or to identify Hex-Digits '\uXXXX' in JSON string along with [ReverseSlashByte](DevFast.Net.Text.Json.JsonConst.md#DevFast.Net.Text.Json.JsonConst.ReverseSlashByte 'DevFast.Net.Text.Json.JsonConst.ReverseSlashByte')), as [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') (based on https://datatracker.ietf.org/doc/html/rfc7159).
-
-```csharp
-public const byte SecondOfHexDigitInStringByte = 117;
 ```
 
 #### Field Value
