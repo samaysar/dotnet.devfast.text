@@ -29,7 +29,7 @@
 	  <InformationalVersion Condition="'$(vNugetPack)'!=''">$(vNugetPack).0</InformationalVersion>
     <AssemblyTitle>DevFast.Net.Text (TargetFramework: $(TargetFramework))</AssemblyTitle>
     <Authors>Divya Sarthi MAHESHWARI</Authors>
-    <Description>Package containing well-tested, self-explained &amp; easy to use artifact necessary for text processing.</Description>
+    <Description>Package containing well-tested, self-explained &amp; easy to use artifacts necessary for text processing.</Description>
     <Copyright>Copyright © Divya Sarthi MAHESHWARI 2024</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/samaysar/dotnet.devfast</PackageProjectUrl>
