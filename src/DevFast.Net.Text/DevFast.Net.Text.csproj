@@ -64,7 +64,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="DevFast.Net.Extensions" Version="0.2.0" />
+    <PackageReference Include="DevFast.Net.Extensions" Version="0.4.0" />
   </ItemGroup>
 
 </Project>
