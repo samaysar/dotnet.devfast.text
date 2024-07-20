@@ -13,7 +13,7 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(withPreamble);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             _ = m.Seek(0, SeekOrigin.Begin);
             using (IJsonArrayReader r = await JsonReader.CreateUtf8ArrayReaderAsync(m, CancellationToken.None, disposeStream: disposeInner))
             {
@@ -31,7 +31,11 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
             }
             if (disposeInner)
             {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_0_OR_GREATER
                 _ = Throws<ObjectDisposedException>(() => m.Write(new byte[] { 1 }));
+#else
+                _ = Throws<ObjectDisposedException>(() => m.Write(new byte[] { 1 }, 0, 1));
+#endif
             }
             else
             {
@@ -47,8 +51,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(withPreamble);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[] { JsonConst.ArrayBeginByte, JsonConst.ArrayEndByte });
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[] { JsonConst.ArrayBeginByte, JsonConst.ArrayEndByte });
             _ = m.Seek(0, SeekOrigin.Begin);
             using (IJsonArrayReader r = await JsonReader.CreateUtf8ArrayReaderAsync(m, CancellationToken.None, disposeStream: disposeInner))
             {
@@ -71,7 +75,11 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
             }
             if (disposeInner)
             {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_0_OR_GREATER
                 _ = Throws<ObjectDisposedException>(() => m.Write(new byte[] { 1 }));
+#else
+                _ = Throws<ObjectDisposedException>(() => m.Write(new byte[] { 1 }, 0, 1));
+#endif
             }
             else
             {
@@ -84,14 +92,18 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[] { JsonConst.ArrayBeginByte, JsonConst.ArrayEndByte });
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[] { JsonConst.ArrayBeginByte, JsonConst.ArrayEndByte });
             _ = m.Seek(0, SeekOrigin.Begin);
             using (IJsonArrayReader r = await JsonReader.CreateUtf8ArrayReaderAsync(m, CancellationToken.None, disposeStream: true))
             {
                 That(r.EnumerateJsonArray(true).Count(), Is.EqualTo(0));
             }
-            _ = Throws<ObjectDisposedException>(() => m.Write(new byte[] { 1 }));
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_0_OR_GREATER
+                _ = Throws<ObjectDisposedException>(() => m.Write(new byte[] { 1 }));
+#else
+            _ = Throws<ObjectDisposedException>(() => m.Write(new byte[] { 1 }, 0, 1));
+#endif
         }
 
         [Test]
@@ -99,8 +111,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[] { JsonConst.ArrayBeginByte, JsonConst.Number9Byte, JsonConst.ArrayEndByte });
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[] { JsonConst.ArrayBeginByte, JsonConst.Number9Byte, JsonConst.ArrayEndByte });
             _ = m.Seek(0, SeekOrigin.Begin);
             using IJsonArrayReader r = await JsonReader.CreateUtf8ArrayReaderAsync(m, CancellationToken.None, disposeStream: true);
             List<RawJson> dataPoints = r.EnumerateJsonArray(true).ToList();
@@ -115,8 +127,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[] { JsonConst.ArrayBeginByte });
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[] { JsonConst.ArrayBeginByte });
             _ = m.Seek(0, SeekOrigin.Begin);
             using IJsonArrayReader r = await JsonReader.CreateUtf8ArrayReaderAsync(m, CancellationToken.None, disposeStream: true);
             JsonException err = Throws<JsonException>(() => r.EnumerateJsonArray(true).ToList())!;
@@ -131,8 +143,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(keepRange ? new[] { JsonConst.ArrayBeginByte, JsonConst.ArrayEndByte } : new[] { JsonConst.ArrayBeginByte });
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, keepRange ? new[] { JsonConst.ArrayBeginByte, JsonConst.ArrayEndByte } : new[] { JsonConst.ArrayBeginByte });
             _ = m.Seek(0, SeekOrigin.Begin);
             using IJsonArrayReader r = await JsonReader.CreateUtf8ArrayReaderAsync(m, CancellationToken.None, disposeStream: true);
             r.ReadIsBeginArrayWithVerify();
@@ -148,8 +160,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[] { JsonConst.ArrayEndByte, JsonConst.ArrayBeginByte });
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[] { JsonConst.ArrayEndByte, JsonConst.ArrayBeginByte });
             _ = m.Seek(0, SeekOrigin.Begin);
             using IJsonArrayReader r = await JsonReader.CreateUtf8ArrayReaderAsync(m, CancellationToken.None, disposeStream: true);
             JsonException err = Throws<JsonException>(() => r.ReadIsEndArray(true))!;
@@ -164,8 +176,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(addValueSeparator ?
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, addValueSeparator ?
                 new[] { JsonConst.Number9Byte, JsonConst.ValueSeparatorByte, JsonConst.Number8Byte } :
                 new[] { JsonConst.Number9Byte, JsonConst.SpaceByte, JsonConst.Number8Byte });
             _ = m.Seek(0, SeekOrigin.Begin);
@@ -188,8 +200,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(true);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[] { JsonConst.LowerCaseUCharacterByte });
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[] { JsonConst.LowerCaseUCharacterByte });
             _ = m.Seek(0, SeekOrigin.Begin);
             using IJsonArrayReader r = await JsonReader.CreateUtf8ArrayReaderAsync(m, CancellationToken.None, disposeStream: true);
             JsonException err = Throws<JsonException>(() => r.ReadRaw(false))!;
@@ -205,8 +217,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(true);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(TestHelper.ComplexRawJson());
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, TestHelper.ComplexRawJson());
             _ = m.Seek(0, SeekOrigin.Begin);
             using IJsonArrayReader r = await JsonReader.CreateUtf8ArrayReaderAsync(m, CancellationToken.None, disposeStream: true);
             RawJson raw = r.ReadRaw(false);
@@ -222,9 +234,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{1} => invalid object
-            await m.WriteAsync(new[] { JsonConst.ObjectBeginByte, JsonConst.Number1Byte, JsonConst.ArrayEndByte });
+            await WriteAsync(m, new[] { JsonConst.ObjectBeginByte, JsonConst.Number1Byte, JsonConst.ArrayEndByte });
             _ = m.Seek(0, SeekOrigin.Begin);
             using IJsonArrayReader r = await JsonReader.CreateUtf8ArrayReaderAsync(m, CancellationToken.None, disposeStream: true);
             JsonException err = Throws<JsonException>(() => r.ReadRaw(false))!;
@@ -240,9 +252,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 JsonConst.StringQuoteByte,
                 JsonConst.ReverseSlashByte,
@@ -280,9 +292,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 JsonConst.StringQuoteByte,
                 JsonConst.ReverseSlashByte,
@@ -300,9 +312,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
 
             m = new();
             e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 JsonConst.StringQuoteByte,
                 JsonConst.ReverseSlashByte,
@@ -322,9 +334,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 JsonConst.StringQuoteByte,
                 JsonConst.ReverseSlashByte,
@@ -347,9 +359,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 JsonConst.StringQuoteByte,
                 JsonConst.Number0Byte
@@ -369,9 +381,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 (byte)'t',
                 (byte)'r',
@@ -388,9 +400,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
 
             m = new();
             e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 (byte)'f',
                 (byte)'a',
@@ -412,9 +424,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 (byte)'n',
                 (byte)'u',
@@ -435,9 +447,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 (byte)'{',
                 (byte)'"',
@@ -457,9 +469,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
 
             m = new();
             e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 (byte)'[',
                 (byte)'1' //not closing ']'
@@ -479,8 +491,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[]
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[]
             {
                 (byte)'{',
                 (byte)'"',
@@ -507,8 +519,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
 
             m = new();
             e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[]
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[]
             {
                 (byte)'[',
                 (byte)'1',
@@ -531,8 +543,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[]
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[]
             {
                 (byte)'{',
                 (byte)'"',
@@ -553,8 +565,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
 
             m = new();
             e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[]
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[]
             {
                 (byte)'{'
             });
@@ -569,8 +581,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
 
             m = new();
             e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[]
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[]
             {
                 (byte)'{',
                 (byte)' '
@@ -586,9 +598,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
 
             m = new();
             e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 (byte)'[',
                 (byte)'1',
@@ -605,9 +617,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
 
             m = new();
             e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 (byte)'['
             });
@@ -622,9 +634,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
 
             m = new();
             e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 (byte)'[',
                 (byte)' '
@@ -644,8 +656,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[]
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[]
             {
                 (byte)'{',
                 (byte)'"',
@@ -670,8 +682,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[]
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[]
             {
                 (byte)'{',
                 (byte)'"',
@@ -694,9 +706,9 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
 
             m = new();
             e = new(false);
-            await m.WriteAsync(e.GetPreamble());
+            await WriteAsync(m, e.GetPreamble());
             //{\\a\n} => objectwith comments
-            await m.WriteAsync(new[]
+            await WriteAsync(m, new[]
             {
                 (byte)'[',
                 (byte)'1',
@@ -715,8 +727,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[]
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[]
             {
                 (byte)'{',
                 (byte)'/'
@@ -736,8 +748,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[]
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[]
             {
                 (byte)'/',
                 (byte)'/'
@@ -753,8 +765,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[]
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[]
             {
                 (byte)'/',
                 (byte)'*',
@@ -773,8 +785,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[]
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[]
             {
                 (byte)'/',
                 (byte)'*'
@@ -794,8 +806,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
         {
             MemoryStream m = new();
             UTF8Encoding e = new(false);
-            await m.WriteAsync(e.GetPreamble());
-            await m.WriteAsync(new[]
+            await WriteAsync(m, e.GetPreamble());
+            await WriteAsync(m, new[]
             {
                 (byte)'/',
                 (byte)'m',
@@ -809,6 +821,18 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
                 That(err, Is.Not.Null);
                 That(err.Message, Is.EqualTo("Can not find correct comment format. Found single forward-slash '/' when expected either single line comment token '//' or multi-line comment token '/*'. 0-Based Position = 1."));
             });
+        }
+
+        private static async Task WriteAsync(Stream m, byte[] data)
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_0_OR_GREATER
+            await m.WriteAsync(data);
+#else
+            if (data.Length > 0)
+            {
+                await m.WriteAsync(data, 0, data.Length);
+            }
+#endif
         }
     }
 }

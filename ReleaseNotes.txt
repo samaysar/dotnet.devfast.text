@@ -1,3 +1,9 @@
+DevFast.Net.Text 0.2.0
+
+ 1. Changes - Removing support for .Net 7.0 
+ 2. New feature - Adding support for .Net Standard 2.0
+ 3. New feature - Adding support for .Net Standard 2.1
+
 DevFast.Net.Text 0.1.0
 
  1. New feature - namespace DevFast.Net.Text added, containing
