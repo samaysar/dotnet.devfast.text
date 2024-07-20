@@ -12,7 +12,7 @@
             Multiple(() =>
             {
                 That(err, Is.Not.Null);
-                That(err.Message, Is.EqualTo("stream should support Read operation!"));
+                That(err.Message, Is.EqualTo("Inside CreateUtf8ArrayReaderAsync, stream does not satisfy CanRead."));
             });
         }
 
@@ -20,11 +20,11 @@
         public void CreateUtf8ArrayReaderAsync_Throws_Error_If_MemoryStream_Does_Not_Provide_Buffer()
         {
             MemoryStream m = new(Array.Empty<byte>(), 0, 0, false, false);
-            ArgumentException err = ThrowsAsync<ArgumentException>(async () => await JsonReader.CreateUtf8ArrayReaderAsync(m).ConfigureAwait(false))!;
+            InvalidOperationException err = ThrowsAsync<InvalidOperationException>(async () => await JsonReader.CreateUtf8ArrayReaderAsync(m).ConfigureAwait(false))!;
             Multiple(() =>
             {
                 That(err, Is.Not.Null);
-                That(err.Message, Is.EqualTo("Stream buffer is not exposed!"));
+                That(err.Message, Is.EqualTo("Inside CreateUtf8ArrayReaderAsync, MemoryStream must exposed it's buffer."));
             });
         }
     }

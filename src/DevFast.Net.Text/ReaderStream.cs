@@ -86,7 +86,7 @@
 //            _currentPosition--;
 //        }
 
-//        public bool MoveNextAsync(CancellationToken token, int steps = 1)
+//        public bool MoveNextAsync(Token token, int steps = 1)
 //        {
 //            _current += steps;
 //            _currentPosition += steps;
@@ -100,13 +100,13 @@
 //            _data = DataNode.Empty.Data;
 //        }
 
-//        private bool TryIncreasingBufferAsync(CancellationToken token)
+//        private bool TryIncreasingBufferAsync(Token token)
 //        {
 //            if (_stream == null) return false;
 //            return _end == _data.Length ? AddNodeAsync(_stream, token) : FillBufferAsync(_stream, token);
 //        }
 
-//        private bool AddNodeAsync(Stream stream, CancellationToken token)
+//        private bool AddNodeAsync(Stream stream, Token token)
 //        {
 //            var data = new byte[_data.Length];
 //            var end = stream.ReadAsync(data, token).AsTask().GetAwaiter().GetResult();
@@ -124,7 +124,7 @@
 //            return _current < _end;
 //        }
 
-//        private bool FillBufferAsync(Stream stream, CancellationToken token)
+//        private bool FillBufferAsync(Stream stream, Token token)
 //        {
 //            var end = stream.ReadAsync(_data.AsMemory(_end, _data.Length - _end), token).AsTask().GetAwaiter().GetResult();
 //            if (end == 0)
