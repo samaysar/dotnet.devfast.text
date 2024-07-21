@@ -162,7 +162,7 @@ public sealed class MemJsonArrayReader : IJsonArrayReader
         SkipWhiteSpace();
         if (!InRange || _buffer[_current] == JsonConst.ArrayEndByte)
         {
-            return new RawJson(JsonType.Undefined, []);
+            return new RawJson(JsonType.Undefined, Array.Empty<byte>());
         }
 
         int begin = _current;

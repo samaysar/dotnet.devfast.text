@@ -29,7 +29,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 Convenient method, to create well initialized instance of type [IJsonArrayReader](DevFast.Net.Text.Json.IJsonArrayReader.md 'DevFast.Net.Text.Json.IJsonArrayReader').
 
 ```csharp
-public static System.Threading.Tasks.Task<DevFast.Net.Text.Json.IJsonArrayReader> CreateUtf8ArrayReaderAsync(System.IO.Stream stream, System.Threading.CancellationToken token=default(System.Threading.CancellationToken), int size=512, bool disposeStream=false);
+public static System.Threading.Tasks.ValueTask<DevFast.Net.Text.Json.IJsonArrayReader> CreateUtf8ArrayReaderAsync(System.IO.Stream stream, System.Threading.CancellationToken token=default(System.Threading.CancellationToken), int size=512, bool disposeStream=false);
 ```
 #### Parameters
 
@@ -61,4 +61,4 @@ Initial size of underlying byte buffer. Any value less than
             when [stream](DevFast.Net.Text.Json.JsonReader.md#DevFast.Net.Text.Json.JsonReader.CreateUtf8ArrayReaderAsync(System.IO.Stream,System.Threading.CancellationToken,int,bool).stream 'DevFast.Net.Text.Json.JsonReader.CreateUtf8ArrayReaderAsync(System.IO.Stream, System.Threading.CancellationToken, int, bool).stream') is completely read; [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool') otherwise.
 
 #### Returns
-[System.Threading.Tasks.Task&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')[IJsonArrayReader](DevFast.Net.Text.Json.IJsonArrayReader.md 'DevFast.Net.Text.Json.IJsonArrayReader')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.Task-1 'System.Threading.Tasks.Task`1')
+[System.Threading.Tasks.ValueTask&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.ValueTask-1 'System.Threading.Tasks.ValueTask`1')[IJsonArrayReader](DevFast.Net.Text.Json.IJsonArrayReader.md 'DevFast.Net.Text.Json.IJsonArrayReader')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Threading.Tasks.ValueTask-1 'System.Threading.Tasks.ValueTask`1')

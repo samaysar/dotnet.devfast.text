@@ -20,9 +20,9 @@ Implements [System.IEquatable&lt;](https://docs.microsoft.com/en-us/dotnet/api/S
 Create an instance with JSON type and corresponding raw value.
 ### Constructors
 
-<a name='DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType,byte[])'></a>
+<a name='DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType,ReadOnlyMemory_byte_)'></a>
 
-## RawJson(JsonType, byte[]) Constructor
+## RawJson(JsonType, ReadOnlyMemory<byte>) Constructor
 
 Raw JSON output that provide a valid [JsonType](DevFast.Net.Text.Json.JsonType.md 'DevFast.Net.Text.Json.JsonType') and corresponding
 [Value](DevFast.Net.Text.Json.RawJson.md#DevFast.Net.Text.Json.RawJson.Value 'DevFast.Net.Text.Json.RawJson.Value').
@@ -31,24 +31,24 @@ When [Type](DevFast.Net.Text.Json.RawJson.md#DevFast.Net.Text.Json.RawJson.Type 
 an empty [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') array.
 
 ```csharp
-public RawJson(DevFast.Net.Text.Json.JsonType type, byte[] value);
+public RawJson(DevFast.Net.Text.Json.JsonType type, ReadOnlyMemory<byte> value);
 ```
 #### Parameters
 
-<a name='DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType,byte[]).type'></a>
+<a name='DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType,ReadOnlyMemory_byte_).type'></a>
 
 `type` [JsonType](DevFast.Net.Text.Json.JsonType.md 'DevFast.Net.Text.Json.JsonType')
 
-[JsonType](DevFast.Net.Text.Json.JsonType.md 'DevFast.Net.Text.Json.JsonType') of the [value](DevFast.Net.Text.Json.RawJson.md#DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType,byte[]).value 'DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType, byte[]).value')
+[JsonType](DevFast.Net.Text.Json.JsonType.md 'DevFast.Net.Text.Json.JsonType') of the [value](DevFast.Net.Text.Json.RawJson.md#DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType,ReadOnlyMemory_byte_).value 'DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType, ReadOnlyMemory<byte>).value')
 
-<a name='DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType,byte[]).value'></a>
+<a name='DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType,ReadOnlyMemory_byte_).value'></a>
 
-`value` [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
+`value` [System.ReadOnlyMemory](https://docs.microsoft.com/en-us/dotnet/api/System.ReadOnlyMemory 'System.ReadOnlyMemory')
 
 Byte sequence of the associated [JsonType](DevFast.Net.Text.Json.JsonType.md 'DevFast.Net.Text.Json.JsonType')
 
 ### Remarks
-Create an instance with JSON [type](DevFast.Net.Text.Json.RawJson.md#DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType,byte[]).type 'DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType, byte[]).type') and corresponding raw [value](DevFast.Net.Text.Json.RawJson.md#DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType,byte[]).value 'DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType, byte[]).value').
+Create an instance with JSON [type](DevFast.Net.Text.Json.RawJson.md#DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType,ReadOnlyMemory_byte_).type 'DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType, ReadOnlyMemory<byte>).type') and corresponding raw [value](DevFast.Net.Text.Json.RawJson.md#DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType,ReadOnlyMemory_byte_).value 'DevFast.Net.Text.Json.RawJson.RawJson(DevFast.Net.Text.Json.JsonType, ReadOnlyMemory<byte>).value').
 ### Properties
 
 <a name='DevFast.Net.Text.Json.RawJson.Type'></a>
@@ -72,11 +72,11 @@ Raw JSON value. When [Type](DevFast.Net.Text.Json.RawJson.md#DevFast.Net.Text.Js
 an empty [System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte') array.
 
 ```csharp
-public byte[] Value { get; }
+public ReadOnlyMemory<byte> Value { get; }
 ```
 
 #### Property Value
-[System.Byte](https://docs.microsoft.com/en-us/dotnet/api/System.Byte 'System.Byte')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
+[System.ReadOnlyMemory](https://docs.microsoft.com/en-us/dotnet/api/System.ReadOnlyMemory 'System.ReadOnlyMemory')
 ### Methods
 
 <a name='DevFast.Net.Text.Json.RawJson.Equals(DevFast.Net.Text.Json.RawJson)'></a>

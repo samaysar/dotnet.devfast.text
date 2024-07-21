@@ -13,7 +13,7 @@
 /// </remarks>
 /// <param name="type"><see cref="JsonType"/> of the <paramref name="value"/></param>
 /// <param name="value">Byte sequence of the associated <see cref="JsonType"/></param>
-public readonly struct RawJson(JsonType type, byte[] value) : IEquatable<RawJson>
+public readonly struct RawJson(JsonType type, ReadOnlyMemory<byte> value) : IEquatable<RawJson>
 {
     /// <summary>
     /// JSON type of raw <see cref="Value"/>.
@@ -24,9 +24,7 @@ public readonly struct RawJson(JsonType type, byte[] value) : IEquatable<RawJson
     /// Raw JSON value. When <see cref="Type"/> is <see cref="JsonType.Undefined"/>, <see cref="Value"/> is
     /// an empty <see cref="byte"/> array.
     /// </summary>
-#pragma warning disable CA1819
-    public byte[] Value { get; } = value;
-#pragma warning restore CA1819
+    public ReadOnlyMemory<byte> Value { get; } = value;
 
     /// <summary>
     /// Indicates if provided <paramref name="obj"/> instance is equal to current instance.
@@ -71,8 +69,6 @@ public readonly struct RawJson(JsonType type, byte[] value) : IEquatable<RawJson
     /// <param name="other">Another instance</param>
     public bool Equals(RawJson other)
     {
-        //We dont care if Value array is byte by byte same
-        //if it is NOT same Value instance, we say they are not equal.
-        return Type.Equals(other.Type) && ReferenceEquals(Value, other.Value);
+        return Type.Equals(other.Type) && Value.Equals(other.Value);
     }
 }

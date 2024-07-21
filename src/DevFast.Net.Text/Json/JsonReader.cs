@@ -18,17 +18,10 @@ public static class JsonReader
     /// <param name="disposeStream"><see langword="true"/> to dispose <paramref name="stream"/> when either
     /// current instance of <see cref="IJsonArrayReader"/> itself disposing or
     /// when <paramref name="stream"/> is completely read; <see langword="false"/> otherwise.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_0_OR_GREATER
     public static async ValueTask<IJsonArrayReader> CreateUtf8ArrayReaderAsync(Stream stream,
         Token token = default,
         int size = JsonConst.JsonReaderMinBuffer,
         bool disposeStream = false)
-#else
-    public static async Task<IJsonArrayReader> CreateUtf8ArrayReaderAsync(Stream stream,
-        Token token = default,
-        int size = JsonConst.JsonReaderMinBuffer,
-        bool disposeStream = false)
-#endif
     {
         stream = stream.ThrowArgumentExceptionForNull($"Inside {nameof(CreateUtf8ArrayReaderAsync)}, {nameof(stream)}")
             .ThrowArgumentExceptionOnPredicateFail(static x => x.CanRead, $"Inside {nameof(CreateUtf8ArrayReaderAsync)}, {nameof(stream)}", nameof(Stream.CanRead));

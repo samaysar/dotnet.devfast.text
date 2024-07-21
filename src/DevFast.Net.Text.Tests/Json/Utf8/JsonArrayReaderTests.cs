@@ -19,7 +19,7 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
                     That(r.ReadIsBeginArray(), Is.False);
                     That(r.ReadIsEndArray(false), Is.False);
                     RawJson current = r.ReadRaw(default);
-                    That(current.Value, Is.Empty);
+                    That(current.Value.Length, Is.EqualTo(0));
                     That(current.Type, Is.EqualTo(JsonType.Undefined));
                     That(r.EoJ, Is.True);
                     That(r.Current, Is.Null);
@@ -55,7 +55,7 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
                 RawJson current = r.ReadRaw(default);
                 Multiple(() =>
                 {
-                    That(current.Value, Is.Empty);
+                    That(current.Value.Length, Is.EqualTo(0));
                     That(current.Type, Is.EqualTo(JsonType.Undefined));
                     That(r.EoJ, Is.False);
                     That(r.Current, Is.EqualTo(JsonConst.ArrayEndByte));
@@ -89,7 +89,7 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
                 That(r.EnumerateJsonArray(true).Count(), Is.EqualTo(0));
             }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_0_OR_GREATER
-                _ = Throws<ObjectDisposedException>(() => m.Write(new byte[] { 1 }));
+            _ = Throws<ObjectDisposedException>(() => m.Write(new byte[] { 1 }));
 #else
             _ = Throws<ObjectDisposedException>(() => m.Write(new byte[] { 1 }, 0, 1));
 #endif
@@ -106,7 +106,7 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
                 That(dataPoints, Has.Count.EqualTo(1));
                 That(dataPoints[0].Type, Is.EqualTo(JsonType.Num));
                 That(dataPoints[0].Value, Has.Length.EqualTo(1));
-                That(dataPoints[0].Value[0], Is.EqualTo(JsonConst.Number9Byte));
+                That(dataPoints[0].Value.Span[0], Is.EqualTo(JsonConst.Number9Byte));
             });
         }
 
@@ -160,8 +160,8 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
                 That(d1.Type, Is.EqualTo(JsonType.Num));
                 That(d2.Type, Is.EqualTo(JsonType.Num));
                 That(d3.Type, Is.EqualTo(JsonType.Undefined));
-                That(d1.Value[0], Is.EqualTo(JsonConst.Number9Byte));
-                That(d2.Value[0], Is.EqualTo(JsonConst.Number8Byte));
+                That(d1.Value.Span[0], Is.EqualTo(JsonConst.Number9Byte));
+                That(d2.Value.Span[0], Is.EqualTo(JsonConst.Number8Byte));
             });
         }
 
@@ -185,7 +185,7 @@ namespace DevFast.Net.Text.Tests.Json.Utf8
             using IJsonArrayReader r = await JsonReader.CreateUtf8ArrayReaderAsync(m, CancellationToken.None, disposeStream: true);
             RawJson raw = r.ReadRaw(false);
             That(raw.Type, Is.EqualTo(JsonType.Obj));
-            TestHelper.ValidateObjectOfComplexRawJson(JsonSerializer.Deserialize<ExpandoObject>(raw.Value, new JsonSerializerOptions
+            TestHelper.ValidateObjectOfComplexRawJson(JsonSerializer.Deserialize<ExpandoObject>(raw.Value.Span, new JsonSerializerOptions
             {
                 ReadCommentHandling = JsonCommentHandling.Skip
             })!);
