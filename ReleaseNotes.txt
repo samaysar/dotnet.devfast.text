@@ -1,3 +1,8 @@
+DevFast.Net.Text 0.3.0
+
+ 1. Changes - DevFast.Net.Text.Json.RawJson uses ReadOnlyMemory<byte> instead of byte[]
+ 2. New feature - With polyfill, increasing library scope for older .Net versions.
+
 DevFast.Net.Text 0.2.0
 
  1. Changes - Removing support for .Net 7.0 

@@ -164,7 +164,7 @@ public sealed class JsonArrayReader : IJsonArrayReader
         SkipWhiteSpace(token);
         if (!InRange || _buffer[_current] == JsonConst.ArrayEndByte)
         {
-            return new RawJson(JsonType.Undefined, []);
+            return new RawJson(JsonType.Undefined, Array.Empty<byte>());
         }
 
         ReDefineBuffer(0, token);
