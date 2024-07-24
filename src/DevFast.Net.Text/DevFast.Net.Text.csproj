@@ -13,6 +13,7 @@
     <DefaultDocumentationFolder>../../docs/$(TargetFramework)</DefaultDocumentationFolder>
     <DefaultDocumentationGeneratedPages>Namespaces,Types</DefaultDocumentationGeneratedPages>
     <DefaultDocumentationConfigurationFile>../../DocConfig.json</DefaultDocumentationConfigurationFile>
+    <DefaultDocumentationGeneratedAccessModifiers>Public</DefaultDocumentationGeneratedAccessModifiers>
     <DefaultDocumentationLinksBaseUrl>https://github.com/samaysar/dotnet.devfast.text/tree/master/docs</DefaultDocumentationLinksBaseUrl>
     <Title>DevFast.Net.Text</Title>
     <Company>samaysar</Company>
