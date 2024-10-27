@@ -1,3 +1,7 @@
+DevFast.Net.Text 0.3.1
+
+ 1. Changes - Dependency package vulnerability fix
+
 DevFast.Net.Text 0.3.0
 
  1. Changes - DevFast.Net.Text.Json.RawJson uses ReadOnlyMemory<byte> instead of byte[]

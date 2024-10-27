@@ -7,7 +7,7 @@ Class implements [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/
 (e.g.: AbcDef to abc_def, MyTKiBd to my_tki_bd, ABC to abc etc) for JSON data.
 
 ```csharp
-public sealed class JsonSnakeCaseNamingPolicy
+public sealed class JsonSnakeCaseNamingPolicy : System.Text.Json.JsonNamingPolicy
 ```
 - *Properties*
   - **[SnakeCase](DevFast.Net.Text.Json.NamingPolicy.JsonSnakeCaseNamingPolicy.md#DevFast.Net.Text.Json.NamingPolicy.JsonSnakeCaseNamingPolicy.SnakeCase 'DevFast.Net.Text.Json.NamingPolicy.JsonSnakeCaseNamingPolicy.SnakeCase')**
@@ -20,10 +20,10 @@ Class implements [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/
 (e.g.: AbcDef to abc_def, MyTKiBd to my_tki_bd, ABC to abc etc) for JSON data.
 
 ```csharp
-public sealed class JsonSnakeCaseNamingPolicy
+public sealed class JsonSnakeCaseNamingPolicy : System.Text.Json.JsonNamingPolicy
 ```
 
-Inheritance [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/en-us/dotnet/api/System.Text.Json.JsonNamingPolicy 'System.Text.Json.JsonNamingPolicy') &#129106; JsonSnakeCaseNamingPolicy
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/en-us/dotnet/api/System.Text.Json.JsonNamingPolicy 'System.Text.Json.JsonNamingPolicy') &#129106; JsonSnakeCaseNamingPolicy
 ### Properties
 
 <a name='DevFast.Net.Text.Json.NamingPolicy.JsonSnakeCaseNamingPolicy.SnakeCase'></a>
@@ -33,7 +33,7 @@ Inheritance [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/en-us
 Returns the naming policy for snake-casing.
 
 ```csharp
-public static JsonNamingPolicy SnakeCase { get; }
+public static System.Text.Json.JsonNamingPolicy SnakeCase { get; }
 ```
 
 #### Property Value
