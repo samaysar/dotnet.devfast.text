@@ -7,7 +7,7 @@ Class implements [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/
 (e.g.: AbcDef to AbcDef, MyTKiBd to MyTKiBd, ABC to ABC etc) for JSON data.
 
 ```csharp
-public sealed class JsonIdemCaseNamingPolicy
+public sealed class JsonIdemCaseNamingPolicy : System.Text.Json.JsonNamingPolicy
 ```
 - *Properties*
   - **[IdemCase](DevFast.Net.Text.Json.NamingPolicy.JsonIdemCaseNamingPolicy.md#DevFast.Net.Text.Json.NamingPolicy.JsonIdemCaseNamingPolicy.IdemCase 'DevFast.Net.Text.Json.NamingPolicy.JsonIdemCaseNamingPolicy.IdemCase')**
@@ -20,10 +20,10 @@ Class implements [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/
 (e.g.: AbcDef to AbcDef, MyTKiBd to MyTKiBd, ABC to ABC etc) for JSON data.
 
 ```csharp
-public sealed class JsonIdemCaseNamingPolicy
+public sealed class JsonIdemCaseNamingPolicy : System.Text.Json.JsonNamingPolicy
 ```
 
-Inheritance [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/en-us/dotnet/api/System.Text.Json.JsonNamingPolicy 'System.Text.Json.JsonNamingPolicy') &#129106; JsonIdemCaseNamingPolicy
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/en-us/dotnet/api/System.Text.Json.JsonNamingPolicy 'System.Text.Json.JsonNamingPolicy') &#129106; JsonIdemCaseNamingPolicy
 ### Properties
 
 <a name='DevFast.Net.Text.Json.NamingPolicy.JsonIdemCaseNamingPolicy.IdemCase'></a>
@@ -33,7 +33,7 @@ Inheritance [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/en-us
 Returns the naming policy which does not change the name.
 
 ```csharp
-public static JsonNamingPolicy IdemCase { get; }
+public static System.Text.Json.JsonNamingPolicy IdemCase { get; }
 ```
 
 #### Property Value

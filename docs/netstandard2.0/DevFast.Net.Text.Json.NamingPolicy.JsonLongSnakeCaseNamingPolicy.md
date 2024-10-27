@@ -7,7 +7,7 @@ Class implements [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/
 (e.g.: AbcDef to abc_def, MyTKiBd to my_t_ki_bd, ABC to a_b_c etc) for JSON data.
 
 ```csharp
-public sealed class JsonLongSnakeCaseNamingPolicy
+public sealed class JsonLongSnakeCaseNamingPolicy : System.Text.Json.JsonNamingPolicy
 ```
 - *Properties*
   - **[LongSnakeCase](DevFast.Net.Text.Json.NamingPolicy.JsonLongSnakeCaseNamingPolicy.md#DevFast.Net.Text.Json.NamingPolicy.JsonLongSnakeCaseNamingPolicy.LongSnakeCase 'DevFast.Net.Text.Json.NamingPolicy.JsonLongSnakeCaseNamingPolicy.LongSnakeCase')**
@@ -20,10 +20,10 @@ Class implements [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/
 (e.g.: AbcDef to abc_def, MyTKiBd to my_t_ki_bd, ABC to a_b_c etc) for JSON data.
 
 ```csharp
-public sealed class JsonLongSnakeCaseNamingPolicy
+public sealed class JsonLongSnakeCaseNamingPolicy : System.Text.Json.JsonNamingPolicy
 ```
 
-Inheritance [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/en-us/dotnet/api/System.Text.Json.JsonNamingPolicy 'System.Text.Json.JsonNamingPolicy') &#129106; JsonLongSnakeCaseNamingPolicy
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/en-us/dotnet/api/System.Text.Json.JsonNamingPolicy 'System.Text.Json.JsonNamingPolicy') &#129106; JsonLongSnakeCaseNamingPolicy
 ### Properties
 
 <a name='DevFast.Net.Text.Json.NamingPolicy.JsonLongSnakeCaseNamingPolicy.LongSnakeCase'></a>
@@ -33,7 +33,7 @@ Inheritance [System.Text.Json.JsonNamingPolicy](https://docs.microsoft.com/en-us
 Returns the naming policy for snake-casing.
 
 ```csharp
-public static JsonNamingPolicy LongSnakeCase { get; }
+public static System.Text.Json.JsonNamingPolicy LongSnakeCase { get; }
 ```
 
 #### Property Value
